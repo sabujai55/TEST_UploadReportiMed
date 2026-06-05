@@ -162,7 +162,7 @@ Double.parseDouble(($P{TotalDepNoText}).replaceAll(",", ""))<0 ? new Double(0) :
 				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
 					<font fontName="TH Sarabun New" size="20" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
-				<text><![CDATA[ใบแจ้งค่ารักษาพยาบาล]]></text>
+				<text><![CDATA[ใบแจ้งค่ารักษาพยาบาล (แก้ไข)]]></text>
 			</staticText>
 			<image>
 				<reportElement x="18" y="18" width="94" height="56"/>
