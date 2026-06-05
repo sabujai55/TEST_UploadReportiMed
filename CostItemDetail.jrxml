@@ -325,7 +325,7 @@ new SimpleDateFormat("dd MMM yyyy",Locale.UK).format((new SimpleDateFormat("dd/M
 				<text><![CDATA[สิทธิ :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-1" mode="Transparent" x="100" y="21" width="285" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="staticText-1" mode="Transparent" x="100" y="21" width="285" height="29" forecolor="#66FF00" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single">
 					<font fontName="TH Sarabun New" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
