@@ -3,7 +3,7 @@
 	<property name="ireport.scriptlethandling" value="2"/>
 	<property name="ireport.zoom" value="1.7715610000000017"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="113"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="AnVn" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="Hn" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="VisitDate" class="java.lang.String" isForPrompting="false"/>
@@ -141,9 +141,9 @@ new SimpleDateFormat("dd MMM yyyy",Locale.UK).format((new SimpleDateFormat("dd/M
 				<text><![CDATA[-]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-1" mode="Transparent" x="100" y="21" width="285" height="42" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="staticText-1" mode="Transparent" x="100" y="21" width="285" height="42" forecolor="#FF0000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single">
-					<font fontName="TH Sarabun New" size="18" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<font fontName="TH Sarabun New" size="22" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[PRICE ITEM DETAIL]]></text>
 			</staticText>
