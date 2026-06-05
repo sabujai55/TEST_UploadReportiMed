@@ -327,7 +327,7 @@
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="294" y="449" width="200" height="18"/>
+				<reportElement x="294" y="449" width="200" height="18" forecolor="#CC0033"/>
 				<textElement>
 					<font fontName="TH Sarabun New" size="10" isBold="true" isUnderline="false"/>
 				</textElement>
