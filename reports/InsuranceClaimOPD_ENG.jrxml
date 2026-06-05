@@ -896,7 +896,7 @@
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement x="2" y="425" width="555" height="18"/>
+				<reportElement x="2" y="425" width="555" height="18" forecolor="#33FF00"/>
 				<textElement textAlignment="Center">
 					<font fontName="TH Sarabun New" size="10" isBold="true"/>
 				</textElement>
