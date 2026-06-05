@@ -18,5 +18,5 @@ jobs:
       - name: Copy reports to server_local
         run: |
           mkdir -p /opt/reports
-          cp -r PLD/* /opt/reports/
+          cp -r reports/* /opt/reports/
 
