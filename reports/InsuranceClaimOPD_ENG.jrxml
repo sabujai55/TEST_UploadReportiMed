@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InsuranceClaimOPD_ENG" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<property name="ireport.zoom" value="2.2000000000000113"/>
 	<property name="ireport.x" value="14"/>
-	<property name="ireport.y" value="948"/>
+	<property name="ireport.y" value="660"/>
 	<parameter name="Hn" class="java.lang.String"/>
 	<parameter name="PatientFirstName" class="java.lang.String"/>
 	<parameter name="PatientLastName" class="java.lang.String"/>
@@ -334,7 +334,7 @@
 				<text><![CDATA[(To be completed by the attending doctor)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="4" y="449" width="306" height="18"/>
+				<reportElement x="4" y="449" width="306" height="18" forecolor="#0000FF"/>
 				<textElement>
 					<font fontName="TH Sarabun New" size="10" isBold="true" isUnderline="true"/>
 				</textElement>
