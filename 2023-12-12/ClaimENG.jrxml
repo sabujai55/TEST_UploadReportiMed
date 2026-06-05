@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ClaimENG" pageWidth="594" pageHeight="842" columnWidth="594" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.scriptlethandling" value="2"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Hn" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="An" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PrintDate" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PrintTime" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PatientName" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="RoomNumber" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="AdmitORVisit" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Cashier" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Cost" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Discount" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Paid" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PaidText" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="AdmitDate" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Vn" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="BedNumber" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HospitalizedFrom" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="FixVisitType" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Diagnosis" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="AdmitTime" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="EndDate" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PatientInterName" class="java.lang.String" isForPrompting="false"/>
+	<field name="SumCostBillingGroupID" class="java.lang.String"/>
+	<field name="SumCostBillingGroup" class="java.lang.String"/>
+	<field name="Cost" class="java.lang.String"/>
+	<field name="Discount" class="java.lang.String"/>
+	<field name="Paid" class="java.lang.String"/>
+	<variable name="SumCost" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[Double.parseDouble(($F{Cost}).replaceAll(",", ""))<0 ? new Double(0) : new Double(Double.parseDouble(($F{Cost}).replaceAll(",", "")))]]></variableExpression>
+	</variable>
+	<variable name="SumPaid" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[Double.parseDouble(($F{Paid}).replaceAll(",", ""))<0 ? new Double(0) : new Double(Double.parseDouble(($F{Paid}).replaceAll(",", "")))]]></variableExpression>
+	</variable>
+	<variable name="SumDiscount" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[Double.parseDouble(($F{Discount}).replaceAll(",", ""))<0 ? new Double(0) : new Double(Double.parseDouble(($F{Discount}).replaceAll(",", "")))]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="304" splitType="Stretch">
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-40" mode="Transparent" x="89" y="212" width="339" height="29" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="16" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{HospitalizedFrom}!=null ? $P{HospitalizedFrom} :" - "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-66" mode="Transparent" x="489" y="276" width="72" height="25" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="18" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-65" mode="Transparent" x="429" y="276" width="55" height="25" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="18" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-64" mode="Transparent" x="357" y="276" width="66" height="25" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="18" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Cost]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-63" mode="Transparent" x="20" y="276" width="336" height="25" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="18" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Item List]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-60" mode="Transparent" x="18" y="242" width="111" height="30" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Admission Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-61" mode="Transparent" x="118" y="74" width="308" height="29" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(
+($P{PaidText}.indexOf("a")>0 || $P{PaidText}.indexOf("e")>0|| $P{PaidText}.indexOf("i")>0 || $P{PaidText}.indexOf("o")>0 || $P{PaidText}.indexOf("u")>0)&&
+($F{SumCostBillingGroup}.indexOf("a")>0 || $F{SumCostBillingGroup}.indexOf("e")>0|| $F{SumCostBillingGroup}.indexOf("i")>0 || $F{SumCostBillingGroup}.indexOf("o")>0 || $F{SumCostBillingGroup}.indexOf("u")>0)
+)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="20" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Inpatient Statement Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-57" mode="Transparent" x="18" y="180" width="545" height="30" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Patient Name :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-58" mode="Transparent" x="18" y="211" width="111" height="30" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Statement Date :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-1" mode="Transparent" x="118" y="10" width="308" height="64" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="18" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[โรงพยาบาล เปาโล พระประแดง
+288 หมู่1 ก.ม. 18 ถนน สุขสวัสดิ์  จ. สมุทรปราการ 10290
+02 - 818 - 9000]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-14" mode="Transparent" x="362" y="96" width="48" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="18" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[HN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-15" mode="Transparent" x="362" y="151" width="48" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="18" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" mode="Transparent" x="18" y="302" width="534" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-2" mode="Transparent" x="18" y="275" width="534" height="1" forecolor="#000000" backcolor="#FFFFFF"/>
+				<graphicElement fill="Solid">
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-1" mode="Transparent" x="394" y="151" width="217" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[new SimpleDateFormat("dd MMM yyyy", Locale.UK).format((new SimpleDateFormat("dd/MM/yy", Locale.UK)).parse($P{PrintDate})).toString()+"  "+$P{PrintTime}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-2" mode="Transparent" x="392" y="96" width="148" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Hn}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-3" mode="Transparent" x="392" y="123" width="148" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{An}!=null ? $P{An} : $P{Vn}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-19" mode="Transparent" x="362" y="124" width="102" height="27" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="18" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{An}!=null ? "AN: " : "VN: "]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-38" mode="Transparent" x="88" y="181" width="263" height="29" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="16" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{PatientInterName}!=null && !"".equals($P{PatientInterName})? $P{PatientInterName}:$P{PatientName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-41" mode="Transparent" x="88" y="243" width="226" height="29" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="16" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{AdmitDate} != null ? $P{AdmitDate}:" - "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-42" mode="Transparent" x="331" y="245" width="204" height="29" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="16" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{BedNumber} != null ? $P{BedNumber}:" - "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-62" mode="Transparent" x="294" y="244" width="111" height="30" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="16" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Room :]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement key="textField-43" mode="Transparent" x="167" y="243" width="226" height="29" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="16" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{AdmitTime}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-4" mode="Transparent" x="18" y="1" width="437" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SumCostBillingGroup}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement key="textField-5" mode="Transparent" x="344" y="1" width="66" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Cost}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement key="textField-7" mode="Transparent" x="473" y="1" width="72" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Paid}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement key="textField-27" mode="Transparent" x="426" y="1" width="55" height="21" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Discount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="197" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-68" mode="Transparent" x="319" y="112" width="246" height="29" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="18" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Sign .................................... Cashier]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-67" mode="Transparent" x="59" y="35" width="78" height="29" forecolor="#000000" backcolor="#FFFFFF">
+					<printWhenExpression><![CDATA[new Boolean(($P{PaidText}!=null && $P{PaidText}.indexOf("a")>0) || ($P{PaidText}!=null && $P{PaidText}.indexOf("e")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("i")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("o")>0)|| ($P{PaidText}!=null && $P{PaidText}.indexOf("u")>0))]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Sub Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-25" mode="Transparent" x="524" y="151" width="64" height="32" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="18" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[FM-F1-01]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-28" mode="Transparent" x="106" y="35" width="1046" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{PaidText}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-29" mode="Transparent" x="304" y="137" width="195" height="24" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Cashier}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-30" mode="Transparent" x="419" y="35" width="126" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$V{SumPaid}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-31" mode="Transparent" x="265" y="1" width="145" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$V{SumCost}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-32" mode="Transparent" x="408" y="1" width="137" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$V{SumPaid}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField-33" mode="Transparent" x="335" y="1" width="146" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+					<font fontName="TH Sarabun New" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$V{SumDiscount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="plr_SummaryCostItem_Detail" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="2.5937424601000028"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="VisitId" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["1"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select	a.*
+, bh.base_billing_group_id as billhead_id
+, bh.description_th as billhead_name_th
+, bh.description_en as billhead_name_en
+from
+(
+	select 	v.visit_id
+			, oi.verify_date
+			, oi.verify_time
+			, bbg.base_billing_group_id
+			, bbg.description_th as billinggroup_name_th
+			, bbg.description_en as billinggroup_name_en
+			, i.item_code
+			, i.common_name as item_name
+			, oi.quantity
+			, oi.unit_price_sale
+			, oi.unit_price_sale::decimal * oi.quantity::decimal as charge_amt
+			, oi.verify_spid
+			, bsp.base_department_id
+			, oi.op_registered_id
+			--, case when bbg.law_code in ('1.29','1.30','1.11.4') then 1 else 2 end as flag_or
+			--, case when bbg.law_code in ('1.29','1.30','1.11.4') then 'อุปกรณ์ของใช้และเครื่องมือที่ใช้ในห้องผ่าตัด' else 'อุปกรณ์ของใช้และเครื่องมือที่ใช้นอกห้องผ่าตัด' end as flag_name
+			--, case when bbg.law_code in ('1.29','1.30','1.11.4') then 'Equipment inside operationg room' else 'Equipment outside operationg room' end as flag_name_en
+			, case when (bbg.law_code in ('1.29','1.30','1.11.4') or bsp.base_department_id = '5004' or oi.op_registered_id != '') and i.fix_item_type_id not in ('1','2') then 1 else 2 end as flag_or
+			, case when (bbg.law_code in ('1.29','1.30','1.11.4') or bsp.base_department_id = '5004' or oi.op_registered_id != '') then 'อุปกรณ์ของใช้และเครื่องมือที่ใช้ในห้องผ่าตัด' else 'อุปกรณ์ของใช้และเครื่องมือที่ใช้นอกห้องผ่าตัด' end as flag_name
+			, case when (bbg.law_code in ('1.29','1.30','1.11.4') or bsp.base_department_id = '5004' or oi.op_registered_id != '') then 'Equipment inside operationg room' else 'Equipment outside operationg room' end as flag_name_en
+--, bbg.law_code
+			, case when bbg.law_code != '' then
+						(
+						  case when position('.' in bbg.law_code) > 0 then
+						  (
+							  substring(bbg.law_code,1,position('.' in bbg.law_code)-1) || '.' ||
+							  case when position('.' in substring(bbg.law_code,position('.' in bbg.law_code)+1,length(bbg.law_code))) > 0
+							  then substring(substring(bbg.law_code,position('.' in bbg.law_code)+1,length(bbg.law_code)),1, position('.' in substring(bbg.law_code,position('.' in bbg.law_code)+1,length(bbg.law_code)))-1)
+							  else substring(bbg.law_code,position('.' in bbg.law_code)+1,length(bbg.law_code)) end
+						  )
+						  else bbg.law_code end
+						)
+						else '' end as billing_head
+			, substring(bbg.base_billing_group_id,1,8) as billing_head_id
+	from 	visit v left join admit a on v.visit_id = a.visit_id
+			inner join order_item oi on v.visit_id = oi.visit_id
+			inner join item i on oi.item_id = i.item_id
+			inner join base_service_point bsp on oi.verify_spid = bsp.base_service_point_id
+			inner join base_billing_group bbg on oi.base_billing_group_id = bbg.base_billing_group_id
+	where 	v.visit_id = '$P!{VisitId}'
+)a
+left join
+		(
+			select 	bbg.base_billing_group_id
+					, bbg.law_code
+					, bbg.description_th
+					, bbg.description_en
+					, case when bbg.law_code <> '' then
+						(
+						substring(bbg.law_code,1,position('.' in bbg.law_code)-1) || '.' ||
+					  case when position('.' in substring(bbg.law_code,position('.' in bbg.law_code)+1,length(bbg.law_code))) > 0
+					  then substring(substring(bbg.law_code,position('.' in bbg.law_code)+1,length(bbg.law_code)),1, position('.' in substring(bbg.law_code,position('.' in bbg.law_code)+1,length(bbg.law_code)))-1)
+					  else substring(bbg.law_code,position('.' in bbg.law_code)+1,length(bbg.law_code)) end
+						)
+						else '' end as billing_head
+					, substring(bbg.base_billing_group_id,1,8) as billing_head_id
+			from 	base_billing_group bbg
+			where 	substring(bbg.base_billing_group_id,10,2) = '00'
+		)bh on a.billing_head = bh.billing_head and a.billing_head_id = bh.billing_head_id
+order by a.flag_or--, bh.billing_head_id, a.base_billing_group_id]]>
+	</queryString>
+	<field name="visit_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="verify_date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="verify_time" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="base_billing_group_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="billinggroup_name_th" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="billinggroup_name_en" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unit_price_sale" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="charge_amt" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="verify_spid" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="base_department_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="op_registered_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="flag_or" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="flag_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="flag_name_en" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="billing_head" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="billing_head_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="billhead_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="billhead_name_th" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="billhead_name_en" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="OR">
+		<groupExpression><![CDATA[$F{flag_or}]]></groupExpression>
+		<groupHeader>
+			<band height="20" splitType="Stretch">
+				<textField>
+					<reportElement x="0" y="0" width="307" height="20"/>
+					<textElement>
+						<font fontName="TH Sarabun New" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{flag_name_en}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="1"/>
+		</groupFooter>
+	</group>
+	<group name="BillingHead">
+		<groupExpression><![CDATA[$F{billhead_name_th}]]></groupExpression>
+		<groupHeader>
+			<band height="16">
+				<textField>
+					<reportElement x="0" y="0" width="351" height="16"/>
+					<textElement>
+						<font fontName="TH Sarabun New" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{billhead_name_en}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="BillingGroup">
+		<groupExpression><![CDATA[$F{base_billing_group_id}]]></groupExpression>
+		<groupHeader>
+			<band height="16">
+				<textField>
+					<reportElement x="23" y="0" width="270" height="16"/>
+					<textElement>
+						<font fontName="TH Sarabun New" isBold="false"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{billinggroup_name_en}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="1"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="171" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} != 1]]></printWhenExpression>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField>
+				<reportElement x="23" y="0" width="40" height="16"/>
+				<textElement>
+					<font fontName="TH Sarabun New" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{verify_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="0" width="29" height="16"/>
+				<textElement>
+					<font fontName="TH Sarabun New" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{verify_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="92" y="0" width="56" height="16"/>
+				<textElement>
+					<font fontName="TH Sarabun New" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{item_code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="0" width="145" height="16"/>
+				<textElement>
+					<font fontName="TH Sarabun New" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="0" width="21" height="16"/>
+				<textElement>
+					<font fontName="TH Sarabun New" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="0" width="44" height="16"/>
+				<textElement>
+					<font fontName="TH Sarabun New" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{unit_price_sale}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="0" width="48" height="16"/>
+				<textElement>
+					<font fontName="TH Sarabun New" isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{charge_amt}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

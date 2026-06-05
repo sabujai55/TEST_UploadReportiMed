@@ -1,0 +1,2056 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InsuranceClaimPartII" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="3.1384283767210146"/>
+	<property name="ireport.x" value="636"/>
+	<property name="ireport.y" value="845"/>
+	<parameter name="Gender" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PatientPreName" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PatientFirstName" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PatientMiddleName" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PatientLastName" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Hn" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="An" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="AdmitDate" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="AdmitTime" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="ChiefComplaint" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="AccidentDate" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="AccidentTime" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="DischargeDate" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="DischargeTime" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="CauseOfInjury" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="VisitDate" class="java.lang.String"/>
+	<parameter name="PersistTime" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="DateTimeInjury" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="NatureOfWound" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="NoSmellAlcohol" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="SmellAlcohol" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="NotKnownSmellAlcohol" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="NomalLevel" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="ConfusionLevel" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="SemiComaLevel" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="ComaLevel" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="NoDrugs" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="UseDrugs" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="DrugUseDetail" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="NotKnownDrugs" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="ClinicalFindings" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="UnderlyingDisease" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Investigations" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Diagnosis1" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Diagnosis2" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Diagnosis3" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="ICD10TM1" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="ICD10TM2" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="ICD10TM3" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Treatment" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Surgery" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="SurgeryDate" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="SurgeryICD" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Complications" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="NoRelatedAlcohol" class="java.lang.String"/>
+	<parameter name="RelatedAlcohol" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="NotKnownRelatedAlcohol" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="NoPregnant" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Pregnant" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="AgePregnant" class="java.lang.String"/>
+	<parameter name="NoRelatedInfertility" class="java.lang.String"/>
+	<parameter name="RelatedInfertility" class="java.lang.String"/>
+	<parameter name="InfertilityDetail" class="java.lang.String"/>
+	<parameter name="NoTestHIV" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="TestHIV" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="TestHIVResult" class="java.lang.String"/>
+	<parameter name="NoTreatedByOther" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="TreatedByOther" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="OtherTreatDetail" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistoryDate1" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistoryDate2" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistoryDate3" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistorySign1" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistorySign2" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistorySign3" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistoryDiagnosis1" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistoryDiagnosis2" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistoryDiagnosis3" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistoryTreatment1" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistoryTreatment2" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistoryTreatment3" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistoryPhysicians1" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistoryPhysicians2" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HistoryPhysicians3" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="EstimatedTime" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Othercomments" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="HIVResultDetail" class="java.lang.String"/>
+	<parameter name="Attachment" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="DrowsinessLevel" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="AttendingPhysician" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="ProfessionCode" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="MedicalSpecialty" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Indication" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="VsTemperature" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="VsPulse" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="VsRespiration" class="java.lang.String"/>
+	<parameter name="VsPressureMax" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="VsPressureMin" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PatientAge" class="java.lang.String"/>
+	<parameter name="PrintDate" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Temp" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="P" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="R" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="BP" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="DoctorAllowDate" class="java.lang.String"/>
+	<parameter name="VisitId" class="java.lang.String" isForPrompting="false"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="61" width="555" height="157"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="13" y="11" width="68" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Companyl Name]]></text>
+			</staticText>
+			<line>
+				<reportElement x="81" y="25" width="174" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="325" y="11" width="230" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[โรงพยาบาลเปาโล พระประแดง (Paolo Hostipal Phrapradaeng)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="325" y="25" width="230" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="262" y="11" width="63" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Hospital Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="184" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Part B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="59" width="555" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Medical certification]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="71" width="60" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Patient's Name :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="67" y="84" width="153" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="220" y="71" width="21" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sex :]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="240" y="75" width="8" height="8"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<staticText>
+				<reportElement x="249" y="71" width="20" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Male]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="71" width="30" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Female]]></text>
+			</staticText>
+			<ellipse>
+				<reportElement x="269" y="75" width="8" height="8"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</ellipse>
+			<line direction="BottomUp">
+				<reportElement x="241" y="72" width="10" height="10">
+					<printWhenExpression><![CDATA["ชาย".equals($P{Gender})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="269" y="72" width="10" height="10">
+					<printWhenExpression><![CDATA["หญิง".equals($P{Gender})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="312" y="71" width="17" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[HN :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="329" y="84" width="59" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="412" y="84" width="59" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="395" y="71" width="17" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[AN :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="71" width="20" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Age :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="495" y="84" width="55" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="67" y="71" width="153" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{PatientPreName} + $P{PatientFirstName} + " " + $P{PatientMiddleName} + " " + $P{PatientLastName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="329" y="71" width="59" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Hn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="413" y="71" width="59" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{An}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="84" width="65" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Admission Date :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="67" y="96" width="82" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="149" y="84" width="24" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Time :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="173" y="96" width="47" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="220" y="84" width="58" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Discharge Date :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="278" y="96" width="82" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="360" y="84" width="24" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Time :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="384" y="96" width="47" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="431" y="84" width="74" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Consultation Date :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="503" y="96" width="47" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="67" y="84" width="82" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[(new SimpleDateFormat("d/MM/yyyy", new Locale("TH","th")).format((new SimpleDateFormat("dd/MM/yyyy",Locale.UK)).parse($P{AdmitDate})).toString())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="84" width="48" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{AdmitTime}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="99" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="7" y="100" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="100" width="46" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[For Illnese]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="112" width="15" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[a)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="112" width="168" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date you first saw this patient for this illness :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="204" y="124" width="53" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="135" width="236" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="146" width="236" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="21" y="145" width="15" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[a)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="145" width="168" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Chief complaint and duration of symptom(s) :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="21" y="168" width="236" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="184" width="236" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="199" width="236" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="215" width="236" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="230" width="236" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="232" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="296" y="100" width="1" height="132"/>
+			</line>
+			<staticText>
+				<reportElement x="310" y="100" width="46" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[For Injury]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="296" y="100" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[2.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="112" width="15" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[a)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="112" width="59" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date of injury]]></text>
+			</staticText>
+			<line>
+				<reportElement x="378" y="124" width="93" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="471" y="112" width="24" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Time :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="495" y="124" width="55" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="21" y="156" width="236" height="79"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ChiefComplaint}.replaceAll("null","" )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="378" y="112" width="93" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["null".equals($P{AccidentDate})?"":(new SimpleDateFormat("d/MM/yyyy", new Locale("TH","th")).format((new SimpleDateFormat("dd/MM/yyyy",Locale.UK)).parse($P{AccidentDate})).toString())]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="495" y="112" width="55" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{AccidentTime}.replaceAll("null","")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="310" y="123" width="15" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[b)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="123" width="59" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Cause of injury]]></text>
+			</staticText>
+			<line>
+				<reportElement x="382" y="135" width="168" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="325" y="134" width="59" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Details of injury]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="134" width="15" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[c)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="382" y="146" width="168" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="310" y="145" width="15" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[d)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="145" width="130" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Did you smell alcohol for patient?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="156" width="132" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( )  No   ( ) Not know]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="167" width="132" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( )  Yes, blood alcohol test (if any) =]]></text>
+			</staticText>
+			<line>
+				<reportElement x="442" y="179" width="55" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="497" y="167" width="24" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[mg%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="178" width="15" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[e)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="178" width="88" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Level of consciousness]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="178" width="40" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( ) Normal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="178" width="55" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( ) Confiusion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="189" width="70" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( ) Drowsiness]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="189" width="56" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( ) Semi-coma]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="189" width="68" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( ) Coma]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="200" width="106" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Estimated time for recovery]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="200" width="15" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[f)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="325" y="223" width="225" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="431" y="213" width="119" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="21" y="231" width="325" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Did the patient need to be admitted to hospital?  ( ) No  ( ) Yes, indication for admission]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="231" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[3.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="346" y="242" width="204" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="258" width="529" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="21" y="258" width="46" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Vital signs :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="258" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[4.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="67" y="258" width="5" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[T]]></text>
+			</staticText>
+			<line>
+				<reportElement x="72" y="270" width="28" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="100" y="258" width="5" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[P]]></text>
+			</staticText>
+			<line>
+				<reportElement x="105" y="270" width="28" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="133" y="258" width="5" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[R]]></text>
+			</staticText>
+			<line>
+				<reportElement x="138" y="270" width="28" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="166" y="258" width="18" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[BP]]></text>
+			</staticText>
+			<line>
+				<reportElement x="176" y="270" width="44" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="7" y="269" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[5.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="269" width="173" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pertinent Clinical findings (Symptoms & Signs)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="190" y="281" width="360" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="297" width="529" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="7" y="296" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[6.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="296" width="163" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Investigation & Rersult (Lab, EKG, X-ray, etc.)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="184" y="308" width="366" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="323" width="529" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="21" y="341" width="128" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[HIV Test     ( ) No    ( ) Yes, result :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="341" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[7.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="149" y="353" width="128" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="279" y="341" width="67" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date performed :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="346" y="353" width="204" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="21" y="352" width="79" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Underlying disease :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="352" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[8.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="97" y="364" width="316" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="21" y="363" width="46" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Diagnosis 1 :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="363" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[9.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="68" y="375" width="228" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="296" y="363" width="45" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ICD10-TM :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="341" y="375" width="74" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="21" y="374" width="46" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Diagnosis 2 :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="68" y="386" width="228" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="296" y="374" width="45" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ICD10-TM :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="341" y="386" width="74" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="341" y="398" width="74" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="296" y="386" width="45" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ICD10-TM :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="386" width="46" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Diagnosis 3 :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="68" y="398" width="228" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="21" y="397" width="46" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Treatment :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="397" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[10.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="65" y="409" width="485" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="431" y="375" width="64" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Adjusted RW]]></text>
+			</staticText>
+			<line>
+				<reportElement x="431" y="355" width="110" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="431" y="394" width="110" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="431" y="356" width="1" height="38"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="540" y="356" width="1" height="38"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="494" y="356" width="1" height="38"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="432" y="375" width="108" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="425" width="529" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="7" y="440" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[11.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="440" width="79" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Surgery / Operation :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="97" y="452" width="232" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="329" y="440" width="49" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ICD9-CM :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="365" y="452" width="66" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="432" y="440" width="63" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date performed :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="495" y="452" width="55" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="21" y="451" width="344" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Anaesthesia Type : ( ) General Anaesthesia ( ) Spinal Anaesthesia ( ) Local Anaesthesia ( ) Other]]></text>
+			</staticText>
+			<line>
+				<reportElement x="369" y="463" width="181" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="7" y="462" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[12.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="462" width="79" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pathological report :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="97" y="474" width="453" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="21" y="474" width="84" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Complications (if any) :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="474" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[13.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="105" y="487" width="445" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="21" y="486" width="209" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Is the illness related to alcohol, drug abuse or addiction?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="486" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[14.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="486" width="116" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( ) No   ( ) Yes, please specify]]></text>
+			</staticText>
+			<line>
+				<reportElement x="346" y="498" width="204" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="7" y="498" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[15.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="498" width="51" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[For Female :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="498" width="89" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Is the patient pregnant?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="498" width="116" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( ) No   ( ) Yes, gestational age]]></text>
+			</staticText>
+			<line>
+				<reportElement x="352" y="510" width="63" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="415" y="498" width="27" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[weeks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="510" width="154" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Was the treatment related to infertility?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="510" width="116" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( ) No   ( ) Yes, please specify]]></text>
+			</staticText>
+			<line>
+				<reportElement x="346" y="522" width="204" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="21" y="522" width="219" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Has patient ever been treated by another doctor before?]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="522" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[16.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="522" width="172" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( ) No   ( ) Yes, please give name and address]]></text>
+			</staticText>
+			<line>
+				<reportElement x="407" y="534" width="143" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="21" y="534" width="275" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Was the illness/injury contributed to or influenced by any of the following]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="534" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[17.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="546" width="145" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[a) Physical defects/congenital anomaly]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="558" width="145" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[b) Degenerative charge(s)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="546" width="58" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( ) No   ( ) Yes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="558" width="58" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( ) No   ( ) Yes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="570" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[18.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="570" width="275" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Other past medical history]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="585" width="76" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="585" width="107" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Signs & Symptoms]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="204" y="585" width="107" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Diagnosis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="585" width="107" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Treatment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="585" width="89" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Hospital]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="184" height="18" forecolor="#0000FF"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discharge Notification Form]]></text>
+			</staticText>
+			<line>
+				<reportElement x="311" y="585" width="1" height="54"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="204" y="585" width="1" height="54"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="603" width="486" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="96" y="585" width="1" height="54"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="621" width="486" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="751" width="555" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Remark : Doctor who issue this report must be a doctor who is licensed to practice medicine and correctly registered by the thai Medical Council]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="638" width="155" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Other comments about the injury / illness]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="638" width="14" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[19.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="176" y="650" width="374" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="668" width="529" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="677" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="7" y="678" width="548" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[I, hereby certify that I have personally examined and treated the insured in connection with the disability and that the facts are in my opinion as given above.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="693" width="74" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Physician's signature]]></text>
+			</staticText>
+			<line>
+				<reportElement x="81" y="705" width="113" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="205" y="693" width="67" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Medical specialty :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="272" y="705" width="113" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="396" y="693" width="101" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Thai Medical license no :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="489" y="706" width="61" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="7" y="706" width="74" height="18"/>
+				<textElement textAlignment="Right">
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[(]]></text>
+			</staticText>
+			<line>
+				<reportElement x="81" y="718" width="113" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="195" y="706" width="15" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="205" y="706" width="36" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tel no :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="237" y="718" width="148" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="396" y="706" width="35" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Date  :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="425" y="718" width="125" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="7" y="719" width="68" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Medical institute :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="71" y="732" width="123" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="244" y="719" width="36" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Address :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="279" y="732" width="271" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="417" y="585" width="1" height="54"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="638" width="486" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="21" y="584" width="486" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="20" y="584" width="1" height="55"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="506" y="584" width="1" height="54"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="279" y="84" width="77" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["".equals($P{DoctorAllowDate})?"":(new SimpleDateFormat("d/MM/yyyy", new Locale("TH","th")).format((new SimpleDateFormat("yyyy-MM-dd",Locale.UK)).parse($P{DoctorAllowDate})).toString())]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="383" y="84" width="48" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{DischargeTime}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="383" y="123" width="167" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{CauseOfInjury}.replaceAll("null","" )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="21" y="123" width="236" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["".equals($P{VisitDate})?"":(new SimpleDateFormat("d/MM/yyyy", new Locale("TH","th")).format((new SimpleDateFormat("dd/MM/yyyy",Locale.UK)).parse($P{VisitDate})).toString())]]></textFieldExpression>
+			</textField>
+			<line direction="BottomUp">
+				<reportElement x="230" y="232" width="10" height="10"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="72" y="258" width="28" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Temp}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="105" y="258" width="28" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{P}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="138" y="258" width="28" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{R}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="176" y="258" width="44" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{BP}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="20" y="269" width="530" height="29"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["                                                                  " + $P{ClinicalFindings}.replaceAll("null","" )]]></textFieldExpression>
+			</textField>
+			<line direction="BottomUp">
+				<reportElement x="65" y="343" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{NoTestHIV})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="97" y="343" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{TestHIV})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="149" y="341" width="128" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{HIVResultDetail}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="97" y="352" width="316" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{UnderlyingDisease}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="67" y="363" width="229" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Diagnosis1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="341" y="363" width="74" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ICD10TM1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="67" y="374" width="229" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Diagnosis2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="67" y="386" width="229" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Diagnosis3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="341" y="375" width="74" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ICD10TM2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="341" y="386" width="74" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ICD10TM3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="21" y="397" width="530" height="54"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["                  " + $P{Treatment}.replaceAll("null","" )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="440" width="229" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Surgery}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="365" y="441" width="66" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{SurgeryICD}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="494" y="440" width="56" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{SurgeryDate}.equals("")?"":(new SimpleDateFormat("d/MM/yyyy", new Locale("TH","th")).format((new SimpleDateFormat("dd/MM/yyyy",Locale.UK)).parse($P{SurgeryDate})).toString())]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="105" y="474" width="445" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{Complications}]]></textFieldExpression>
+			</textField>
+			<line direction="BottomUp">
+				<reportElement x="242" y="488" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{NoRelatedAlcohol})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="270" y="488" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{RelatedAlcohol})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="242" y="499" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{NoPregnant})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="242" y="511" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{NoRelatedInfertility})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="242" y="523" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{NoTreatedByOther})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="270" y="499" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{Pregnant})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="270" y="511" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{RelatedInfertility})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="270" y="523" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{TreatedByOther})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="351" y="498" width="61" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{AgePregnant}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="346" y="510" width="204" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{InfertilityDetail}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="407" y="522" width="143" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{OtherTreatDetail}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="21" y="604" width="75" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{HistoryDate1}.equals("")?"":(new SimpleDateFormat("d/MM/yyyy", new Locale("TH","th")).format((new SimpleDateFormat("dd/MM/yyyy",Locale.UK)).parse($P{HistoryDate1})).toString())]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="21" y="622" width="75" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{HistoryDate2}.equals("")?"":(new SimpleDateFormat("d/MM/yyyy", new Locale("TH","th")).format((new SimpleDateFormat("dd/MM/yyyy",Locale.UK)).parse($P{HistoryDate2})).toString())]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="97" y="604" width="107" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{HistorySign1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="97" y="622" width="107" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{HistorySign2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="205" y="604" width="106" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{HistoryDiagnosis1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="205" y="622" width="106" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{HistoryDiagnosis2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="312" y="604" width="106" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{HistoryTreatment1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="312" y="622" width="106" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{HistoryTreatment2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="418" y="604" width="89" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{HistoryPhysicians1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="418" y="622" width="89" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{HistoryPhysicians2}]]></textFieldExpression>
+			</textField>
+			<line direction="BottomUp">
+				<reportElement x="311" y="158" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{NoSmellAlcohol})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="343" y="158" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{NotKnownSmellAlcohol})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="311" y="169" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{SmellAlcohol})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="416" y="180" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{NomalLevel})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="484" y="180" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{ConfusionLevel})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="484" y="191" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{ComaLevel})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="416" y="191" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{SemiComaLevel})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="326" y="191" width="10" height="10">
+					<printWhenExpression><![CDATA["1".equals($P{DrowsinessLevel})?Boolean.TRUE:Boolean.FALSE]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="432" y="201" width="118" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{EstimatedTime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="495" y="71" width="55" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{PatientAge}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="81" y="707" width="114" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{AttendingPhysician}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="272" y="693" width="114" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{MedicalSpecialty}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="489" y="693" width="61" height="18"/>
+				<textElement textAlignment="Center">
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{ProfessionCode}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="431" y="704" width="122" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[(new SimpleDateFormat("d/MM/yyyy", new Locale("TH","th")).format((new SimpleDateFormat("dd/MM/yyyy",Locale.UK)).parse($P{PrintDate})).toString())]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="308" y="32" width="11" height="10"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="323" y="28" width="121" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Group Insurance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="28" width="121" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Individual Insurance]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="13" y="32" width="11" height="10"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="21" y="296" width="530" height="13"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["                                                              " + $P{Investigations}.replaceAll("null","" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="74" y="720" width="170" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ รพ. เปาโลพระประแดง  (Paolo Hostipal Phrapradaeng)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="282" y="720" width="268" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[288 ม.1 ต.ปากคลองบางปลากด อ.พระสมุทรเจดีย์ จ.สมุทรปราการ 10280]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="707" width="155" height="18"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[02-8189000, 02-8157141]]></text>
+			</staticText>
+			<line>
+				<reportElement x="21" y="339" width="529" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="21" y="296" width="530" height="56"/>
+				<textElement>
+					<font fontName="TH Sarabun New" size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["                                                              " + $P{Investigations}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="21" y="229" width="529" height="32"/>
+				<subreportParameter name="VisitId">
+					<subreportParameterExpression><![CDATA[$P{VisitId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[System.getProperty("user.home")+File.separator+"iMedConf"+File.separator+"reports" + File.separator + "Sub_ClaimIPD_ReasonOfAdmit.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement x="20" y="295" width="530" height="58">
+					<printWhenExpression><![CDATA[$P{Investigations}.equals("")]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="VisitId">
+					<subreportParameterExpression><![CDATA[$P{VisitId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[System.getProperty("user.home")+File.separator+"iMedConf"+File.separator+"reports" + File.separator + "Sub_ClaimIPD_Investigation.jasper"]]></subreportExpression>
+			</subreport>
+			<line>
+				<reportElement x="21" y="440" width="529" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<subreport>
+				<reportElement x="20" y="396" width="530" height="56">
+					<printWhenExpression><![CDATA[$P{Treatment}.equals("")]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="VisitId">
+					<subreportParameterExpression><![CDATA[$P{VisitId}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA[System.getProperty("user.home")+File.separator+"iMedConf"+File.separator+"reports" + File.separator + "Sub_ClaimIPD_Treatment.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
