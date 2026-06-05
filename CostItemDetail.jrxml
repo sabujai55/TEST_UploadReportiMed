@@ -3,7 +3,7 @@
 	<property name="ireport.scriptlethandling" value="2"/>
 	<property name="ireport.zoom" value="1.2418426461183107"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="45"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="AnVn" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="Hn" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="VisitDate" class="java.lang.String" isForPrompting="false"/>
@@ -139,7 +139,7 @@ new SimpleDateFormat("dd MMM yyyy",Locale.UK).format((new SimpleDateFormat("dd/M
 				<text><![CDATA[ถึง]]></text>
 			</staticText>
 			<staticText>
-				<reportElement key="staticText-1" mode="Transparent" x="100" y="1" width="285" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="staticText-1" mode="Transparent" x="100" y="1" width="285" height="29" forecolor="#0000FF" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single">
 					<font fontName="TH Sarabun New" size="18" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
@@ -297,7 +297,7 @@ new SimpleDateFormat("dd MMM yyyy",Locale.UK).format((new SimpleDateFormat("dd/M
 				<text><![CDATA[ชื่อ :]]></text>
 			</staticText>
 			<textField pattern="" isBlankWhenNull="true">
-				<reportElement key="textField-28" mode="Transparent" x="416" y="30" width="166" height="23" forecolor="#000000" backcolor="#FFFFFF"/>
+				<reportElement key="textField-28" mode="Transparent" x="416" y="30" width="166" height="23" forecolor="#CC0000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
 					<font fontName="TH Sarabun New" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
