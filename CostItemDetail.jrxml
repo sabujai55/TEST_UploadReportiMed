@@ -179,7 +179,7 @@ new SimpleDateFormat("dd MMM yyyy",Locale.UK).format((new SimpleDateFormat("dd/M
 				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" lineSpacing="Single">
 					<font fontName="TH Sarabun New" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 				</textElement>
-				<text><![CDATA[รายละเอียด]]></text>
+				<text><![CDATA[รายละเอียด ccc]]></text>
 			</staticText>
 			<staticText>
 				<reportElement key="staticText-13" mode="Transparent" x="290" y="105" width="80" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
